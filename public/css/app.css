@@ -1,0 +1,23 @@
+:root {
+  --main-color: #0096c7;
+}
+
+.navbar {
+  background-color: var(--main-color) !important;
+}
+
+main {
+  margin: 4.5rem;
+}
+.card {
+  width: 20rem;
+  box-shadow: 1px 0.5px 2px #dee2e6;
+  transition: 400ms;
+}
+.card-img-top {
+  height: 210px;
+  padding: 10px;
+}
+.card:hover {
+  transform: scale(1.02);
+}
