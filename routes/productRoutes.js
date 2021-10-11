@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Product = require('../models/product');
 const Review = require('../models/review')
+const isLoggedIn = require('../middleware');
 
 
 // Getting all products
@@ -146,7 +147,7 @@ router.delete('/products/:id', async (req, res) => {
 
 // adding review
 
-router.post('/products/:id/review', async (req, res) => {
+router.post('/products/:id/review', isLoggedIn, async (req, res) => {
 
     try {
         const {
