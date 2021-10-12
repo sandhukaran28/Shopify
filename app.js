@@ -11,6 +11,7 @@ const passport = require('passport');
 const LocalStratergy = require('passport-local');
 const User = require('./models/user');
 const authRouter = require('./routes/authRoute');
+const cartRouter = require('./routes/cartRoutes');
 
 app.use(express.urlencoded({
     extended: true
@@ -46,6 +47,7 @@ app.use((req, res, next) => {
 // Using routers
 app.use(productRouter);
 app.use(authRouter);
+app.use(cartRouter);
 
 
 
