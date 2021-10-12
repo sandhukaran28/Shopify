@@ -36,4 +36,21 @@ router.get('/user/cart', isLoggedIn, async (req, res) => {
     });
 })
 
+
+router.delete('/cart/:id/remove', isLoggedIn, async (req, res) => {
+
+
+    const productid = req.params.id;
+
+    const userid = req.user._id;
+
+    await User.findByIdAndUpdate(userid, {
+        $pull: {
+            cart: productid
+        }
+    });
+    res.redirect('/user/cart');
+
+})
+
 module.exports = router;
