@@ -1,0 +1,71 @@
+:root {
+    --main-color: #FF725E;
+    outline: none !important;
+  }
+
+.form-control{
+
+    border: none !important;
+    border-bottom: 2px solid var(--main-color) !important;
+}
+.form-control:focus{
+    outline: none !important;
+    border: none !important;
+}
+
+.btn{
+    background: var(--main-color) !important;
+    color: white;
+    font-size: 1.1rem;
+    transition: 400ms;
+
+}
+.form{
+    width: 80% !important;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly !important;
+    height: 500px;
+}
+.btn:hover{
+    transform: scale(1.1);
+    color: white !important;
+}
+.addOn{
+    background: none !important;
+    border: none !important;
+    border-bottom: 2px solid var(--main-color) !important;
+    color: var(--main-color);
+}
+
+.signup-right{
+    margin-top: 30px !important;
+}
+.signup-left{
+    margin-top: 30px !important;
+}
+
+.signup-right h1{
+
+text-align: center;
+
+}
+
+/* Login Page */
+
+.login-left h1{
+
+    text-align: center;
+}
+.login-form{
+    width: 80% !important;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly !important;
+    height: 400px;
+}
+input:focus{
+    outline: none !important;
+}

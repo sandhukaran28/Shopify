@@ -4,26 +4,35 @@
 
 <main class="container">
 
-    <div class="row">
-        <div class="col-md-6 mx-auto">
+    <div class="row signup-row">
+        <div class="col col-ld-6 mt-4 signup-left" >
+            <img src="images/signup.svg" class="svg" alt="svg">
+        </div>
+        <div class="col-lg-6 mx-auto mt-4 signup-right">
+        
             <%- include("../partials/flash") %> 
-            <h1 class="display-6">Sign Up</h1>
-            <form action="/register" method="POST">
-                <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+            <h1 class="display-6">Create Your Shopify Account</h1>
+            <form action="/register" method="POST" class="form">
+              
+                <div class="mb-3 input-group"> 
+                    <span class="input-group-text addOn" id="basic-addon1"><i class="bi bi-person-circle"></i></span>
+                    <input type="text" class="form-control" name="username" id="username" placeholder="Username" aria-describedby="basic-addon1">
                 </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input class="form-control" type="email" name="email" id="email" placeholder="Email">
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input class="form-control" type="password" name="password" id="password" placeholder="Password">
-                </div>
+              
+                <div class="mb-3 input-group">
+                    <span class="input-group-text addOn" id="basic-addon2"><i class="bi bi-envelope-fill"></i></span>
+                    <input class="form-control" type="email" name="email" id="email" placeholder="Email" aria-describedby="basic-addon2">
+            
+              </div>
+            
+                <div class="mb-3 input-group">
+                    <span class="input-group-text addOn" id="basic-addon3"><i class="bi bi-key-fill"></i></span>
+                    <input class="form-control" type="password" name="password" id="password" placeholder="Password" aria-describedby="basic-addon3">
+            
+               </div>
                
 
-                <button type="submit" class="btn btn-success btn-small">Sign Up</button>
+                <button type="submit" class="btn btn-outline btn-small">Sign Up</button>
             </form>
 
         </div>
