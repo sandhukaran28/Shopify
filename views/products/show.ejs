@@ -74,8 +74,11 @@
                               <h5 class="card-title"> <p class="starability-result" data-rating="<%=review.rating%>">
                                 Rated: <%=review.rating%> stars
                             </p> </h5>
+                            <p class="card-text fw-light text-capitalize">By <%= review.user %> </p>
                               <p class="card-text"><%= review.comment %> </p>
+                              <% if(review.user === currentUser.username){ %> 
                               <a href="#" class="btn btn-small btn-danger">Delete</a>
+                              <% } %> 
                             </div>
                           </div>
                     <%}%>

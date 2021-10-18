@@ -161,7 +161,8 @@ router.post('/products/:id/review', isLoggedIn, async (req, res) => {
         } = req.body;
         const newReview = new Review({
             rating,
-            comment
+            comment,
+            user: req.user.username,
         });
         product.reviews.push(newReview);
         await product.save();
@@ -170,7 +171,7 @@ router.post('/products/:id/review', isLoggedIn, async (req, res) => {
         res.redirect(`/products/${id}`);
     } catch (e) {
         req.flash('error', 'oops,something went wrong');
-        res.redirect('/error');
+        res.redirect('/products');
     }
 })
 
