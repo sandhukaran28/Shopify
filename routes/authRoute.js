@@ -55,11 +55,13 @@ router.get('/signup', (req, res) => {
 router.post('/register', async (req, res) => {
 
     const credentials = req.body;
+    console.log(req.body);
 
     try {
         const user = new User({
             username: credentials.username,
-            email: credentials.email
+            email: credentials.email,
+            category: credentials.category
         });
 
         await User.register(user, credentials.password);

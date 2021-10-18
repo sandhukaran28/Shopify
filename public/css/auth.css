@@ -69,3 +69,9 @@ text-align: center;
 input:focus{
     outline: none !important;
 }
+
+.category{
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+}

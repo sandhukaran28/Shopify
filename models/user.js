@@ -9,6 +9,11 @@ const userSchema = new mongoose.Schema({
         trim: true,
         required: true
     },
+    category: {
+        type: String,
+        trim: true,
+        required: true,
+    },
     cart: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Product'
