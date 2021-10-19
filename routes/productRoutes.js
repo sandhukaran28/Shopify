@@ -3,6 +3,7 @@ const router = express.Router();
 const Product = require('../models/product');
 const Review = require('../models/review')
 const isLoggedIn = require('../middleware');
+const mongoose = require('mongoose');
 
 
 // Getting all products
@@ -106,6 +107,8 @@ router.patch('/products/:id', async (req, res) => {
             id
         } = req.params;
 
+        console.log(id);
+
         await Product.findByIdAndUpdate(id, updatedProduct);
 
         req.flash('success', 'Product editd successfully');
@@ -175,6 +178,32 @@ router.post('/products/:id/review', isLoggedIn, async (req, res) => {
     }
 })
 
+
+router.delete('/products/review/delete', async (req, res) => {
+    try {
+        const {
+            pId,
+            rId
+        } = req.query;
+
+        let id = mongoose.Types.ObjectId(rId);
+
+        await Review.findByIdAndDelete(rId);
+        await Product.findByIdAndUpdate(pId, {
+            $pull: {
+                reviews: {
+                    $in: [id]
+                }
+            }
+        })
+        req.flash('success', 'Review deleted successfully');
+        res.redirect(`/products/${pId}`);
+
+    } catch (e) {
+        req.flash('error', 'oops,something went wrong');
+        console.log(e);
+    }
+})
 
 
 

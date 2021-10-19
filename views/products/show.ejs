@@ -77,7 +77,9 @@
                             <p class="card-text fw-light text-capitalize">By <%= review.user %> </p>
                               <p class="card-text"><%= review.comment %> </p>
                               <% if(review.user === currentUser.username){ %> 
-                              <a href="#" class="btn btn-small btn-danger">Delete</a>
+                              <form action="/products/review/delete?pId=<%= product.id %>&rId=<%= review.id %>&_method=DELETE" method="post">
+                                <button class="btn btn-small btn-danger" type="submit">Delete</button>
+                              </form>
                               <% } %> 
                             </div>
                           </div>
