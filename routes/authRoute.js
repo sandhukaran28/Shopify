@@ -4,19 +4,6 @@ const User = require('../models/user');
 const passport = require('passport');
 
 
-// router.get('/fakeUser', async (req, res) => {
-
-
-//     const user = new User({
-//         username: 'Karan',
-//         email: 'sandhukaran2821@gmail.com'
-//     });
-
-//     const newUser = await User.register(user, 'karansingh28');
-
-//     res.send('user added');
-
-// })
 
 
 router.get('/login', (req, res) => {

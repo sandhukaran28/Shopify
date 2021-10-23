@@ -14,14 +14,14 @@
                 <div class="card mx-auto mb-3" style="max-width: 540px;">
                     <div class="row g-0">
                       <div class="col-md-4">
-                        <img src="<%= item.image %>" class="img-fluid rounded-start" alt="..." style="height: 150px;">
+                        <img src="<%= item.product.image %>" class="img-fluid rounded-start" alt="..." style="height: 150px;">
                       </div>
                       <div class="col-md-8">
                         <div class="card-body">
-                          <h5 class="card-title"><%= item.name %> </h5>
-                          <h5 class="card-title">&#x20B9 : <%= item.price %> </h5>
-                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            <form action="/cart/<%=item._id%>/remove?_method=DELETE" method="POST">
+                          <h5 class="card-title"><%= item.product.name %> </h5>
+                          <h5 class="card-title">&#x20B9 : <%= item.product.Nprice %> </h5>
+                          <p class="card-text"><small class="text-muted">Qty: <%= item.qty %> </small></p>
+                            <form action="/cart/<%=item.product._id%>/remove?_method=DELETE" method="POST">
                                 <button class="btn btn-danger btn-sm ">Remove</button>
                             </form>
 
@@ -39,8 +39,8 @@
             <h1 class="display-6">Items</h1>
            <ul class="list-group">
                 <%for(let item of user.cart){%>
-                    <% totalAmount+=item.price %>
-                    <li class="list-group-item"> <span class="fw-bold"> <%=item.name%></span> : &#x20B9 <span><%= item.price %> </span>  </li>
+                    <% totalAmount+=item.product.Nprice %>
+                    <li class="list-group-item"> <span class="fw-bold"> <%=item.product.name%></span> : &#x20B9 <span><%= item.product.Nprice %> </span>  </li>
                 <%}%>
                 <li class="list-group-item"> <span class="fw-bold"> Total Amount</span> : &#x20B9 <span><%= totalAmount %> </span>  </li>
             </ul>

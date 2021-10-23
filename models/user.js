@@ -15,8 +15,14 @@ const userSchema = new mongoose.Schema({
         required: true,
     },
     cart: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Product'
+        product: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Product'
+        },
+        qty: {
+            type: Number,
+            min: 0
+        }
     }]
 });
 
