@@ -1,5 +1,6 @@
 :root {
   --main-color: #101149;
+  --secondary-color:#444691;
 }
 *{
   padding: 0;
@@ -26,16 +27,15 @@ main {
   margin: 4.5rem;
 }
 .card {
-  width: 20rem;
+  width: 18rem;
   box-shadow: 1px 0.5px 2px #dee2e6;
   transition: 400ms;
 }
-.card-img-top {
-  height: 210px;
-  padding: 10px;
-}
 .card:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
+}
+.pDesc{
+  margin-bottom: 0px !important;
 }
 
 
@@ -81,6 +81,7 @@ footer li{
   color: white;
   text-align: center;
   padding-bottom: 20px;
+  margin-bottom: 0px;
 }
 .foot li:hover{
   color: #9C9CA8;
@@ -97,4 +98,40 @@ footer li{
   .foot div{
       margin-bottom: 50px;
   }
+}
+
+.pRate{
+  color: rgb(241, 241, 50);
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+/* Respnsive  Card */
+
+@media screen and (max-width:765px) {
+
+  .card{
+    width: 20rem;
+  }
+  
+}
+
+@media screen and (max-width:515px) {
+
+  main{
+    margin: 2% !important;
+  }
+  .carouselDiv{
+    margin-top: 60px !important;
+  }
+}
+.card-title{
+  transition: 200ms;
+}
+.card-title:hover{
+  color:var(--secondary-color)
+}
+
+.btn:hover{
+  background-color: var(--secondary-color) !important;
 }

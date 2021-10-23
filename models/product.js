@@ -9,7 +9,11 @@ const productSchema = new mongoose.Schema({
         trim: true,
         required: true,
     },
-    price: {
+    Oprice: {
+        type: Number,
+        min: 0
+    },
+    Nprice: {
         type: Number,
         min: 0
     },
