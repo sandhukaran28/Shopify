@@ -9,6 +9,16 @@
         <div class="col-lg-6 Lcart">
             <h3 class="m-2">My Cart</h3>
             <hr>
+            <% if(user.cart.length === 0){ %>
+              <div class="empty">
+                <h4 > Your cart is empty! </h4>
+                <div>
+                  <button class="btn btn-success btn-small"> <a class="nav-link" href="/products">Shop now</a></button>
+           
+                </div>
+              </div>
+
+              <% } %> 
             <% for(let item of user.cart) {%>
                 
                 <div class="card Ccard  m-1 mb-2">

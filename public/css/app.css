@@ -22,6 +22,9 @@ padding: 20px;
 .navbar {
   background-color: var(--main-color) !important;
 }
+.cartIconDiv{
+  width: fit-content;
+}
 
 main {
   margin: 4.5rem;
@@ -32,7 +35,7 @@ main {
   transition: 400ms;
 }
 .card:hover {
-  transform: scale(1.03);
+  transform: scale(1.01);
 }
 .pDesc{
   margin-bottom: 0px !important;
@@ -44,6 +47,9 @@ main {
   margin-top: 20px !important;
 }
 
+.reviewCard{
+  border-radius: 10px;
+}
 
 
 /* Footer */
@@ -87,9 +93,9 @@ footer li{
   color: #9C9CA8;
   cursor: pointer;
 }
-@media screen and (max-width:711px) {
+@media screen and (max-width:727px) {
   footer section{
-      justify-content: space-between;
+      justify-content: center
 
   }
   .foot{
@@ -108,18 +114,30 @@ footer li{
 
 /* Respnsive  Card */
 
+@media screen and (max-width:350px) {
+
+  .card{
+    width: 16rem !important;
+    
+  }
+}
+
 @media screen and (max-width:765px) {
 
   .card{
-    width: 20rem;
+    width: 19rem;
+    
   }
-  
+  .mProducts{
+    width: 98%;
+    margin: 50px auto;
+  }
 }
 
 @media screen and (max-width:515px) {
 
   main{
-    margin: 2% !important;
+    margin: 0 !important;
   }
   .carouselDiv{
     margin-top: 60px !important;
@@ -200,4 +218,25 @@ justify-content: space-between;
 .Ltext  .card-body{
   margin: 0px auto;
   width: fit-content;
+}
+
+.empty{
+  width: fit-content;
+margin: 0px auto;
+  margin-top: 50px;
+  padding: 5px;
+}
+.empty button{
+  margin: 10px auto;
+}
+.empty a{
+  text-decoration: none;
+  color: white;
+}
+.empty div{
+  display: flex;
+  justify-content: center;
+}
+.empty a:hover{
+  color: white;
 }

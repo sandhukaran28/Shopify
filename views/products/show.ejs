@@ -25,7 +25,7 @@
                     <form class="d-inline-block" action="/cart/<%= product.id %>/add " method="post">
                         <button type="submit" class="btn btn-secondary btn-small">Add To Cart</button>
                     </form>
-                    <% if( currentUser && currentUser.category === 'seller'&& currentUser.userName === product.seller  ) {%> 
+                    <% if( currentUser!=null && currentUser.category === 'seller'&& currentUser.userName === product.seller  ) {%> 
                   <a href="/products/<%= product._id %>/edit" class="btn btn-info btn-small">Edit</a>
                
                   <form class="d-inline-block" action="/products/<%= product._id %>?_method=DELETE" method="POST">
@@ -37,6 +37,7 @@
         </div>
         <div class="col-lg-5">
             <h1 class="display-6">Leave a Review</h1>
+            <hr>
             <div class="mb-3">
 
                 <form action="/products/<%=product._id%>/review" method="POST">
@@ -57,7 +58,7 @@
                     </fieldset>
                     <div class="mb-3">
                         <label class="form-label" for="comment">Comment</label>
-                        <textarea class="form-control" name="comment" id="comment" rows="3"></textarea>
+                        <textarea class="form-control" name="comment" id="comment" rows="3" required></textarea>
                     </div>
 
                     <button class="btn btn-small btn-success">Submit</button>
@@ -65,18 +66,19 @@
                 </form>
             </div>
 
-            <div class="mb-3">
-                <div class="mb-3">
-
+            <div class="mb-3 mt-5">
+                <div class="mb-3"> 
+                            <h3>Reviews</h3>
+                            <hr>
                     <%for(let review of product.reviews){%>
-                        <div class="card mb-2">
+                        <div class="card mb-2 reviewCard">
                             <div class="card-body">
                               <h5 class="card-title"> <p class="starability-result" data-rating="<%=review.rating%>">
                                 Rated: <%=review.rating%> stars
                             </p> </h5>
                             <p class="card-text fw-light text-capitalize">By <%= review.user %> </p>
                               <p class="card-text"><%= review.comment %> </p>
-                              <% if(review.user === currentUser.username){ %> 
+                              <% if(currentUser && review.user === currentUser.username){ %> 
                               <form action="/products/review/delete?pId=<%= product.id %>&rId=<%= review.id %>&_method=DELETE" method="post">
                                 <button class="btn btn-small btn-danger" type="submit">Delete</button>
                               </form>

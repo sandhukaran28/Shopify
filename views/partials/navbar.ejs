@@ -40,15 +40,15 @@
           <a
             href="/user/cart"
             type="button"
-            class="btn position-relative nav-link me-1"
+            class="btn position-relative start-0 nav-link me-auto"
           >
-            <i class="fas fa-shopping-cart"></i>
+           <div class="cartIconDiv">
+            <i class="fas fa-shopping-cart me-auto"></i>
             <span
               class="
                 mt-2
                 position-absolute
                 top-0
-                start-100
                 translate-middle
                 badge
                 rounded-pill
@@ -56,8 +56,8 @@
               "
             >
               <%= currentUser.cart.length %>
-              <span class="visually-hidden">unread messages</span>
             </span>
+           </div>
           </a>
         </li>
         <li class="nav-item">
