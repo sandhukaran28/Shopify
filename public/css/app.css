@@ -135,3 +135,69 @@ footer li{
 .btn:hover{
   background-color: var(--secondary-color) !important;
 }
+
+
+
+/* Cart */
+
+
+.Lcart{
+  background-color: white;
+  border-radius: 10px;
+}
+
+.Ccard{
+  width: 100%;
+}
+
+.Litem input{
+width: 40px;
+}
+
+.Ccard input{
+  text-align: center;
+}
+
+
+.RCart-inner{
+  width: 90%;
+  margin: 0px auto;
+  background-color: white;
+  padding: 10px 5%;
+  border-radius: 10px;
+}
+
+.RCart-inner li{
+  border: none;
+display: flex;
+justify-content: space-between;
+}
+
+
+@media screen and (max-width:990px) {
+  
+  .RCart-inner{
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  
+  .RCart-inner{
+    margin-top: 30px;
+  }
+  .Litem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .Litem img{
+    margin: 0px auto;
+  }
+}
+
+.Ltext  .card-body{
+  margin: 0px auto;
+  width: fit-content;
+}

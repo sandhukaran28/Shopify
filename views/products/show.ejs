@@ -22,7 +22,6 @@
                   <p class="card-text"><%=product.desc%></p>
                   <h4 class="me-2 d-inline-block">&#x20B9 <%= product.Nprice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); %></h4>
                   <h6 class="me-2 d-inline-block text-muted text-decoration-line"><s>&#x20B9 <%= product.Oprice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); %></s></h6><br>
-                  <a href="#" class="btn btn-primary btn-small">Buy</a>
                     <form class="d-inline-block" action="/cart/<%= product.id %>/add " method="post">
                         <button type="submit" class="btn btn-secondary btn-small">Add To Cart</button>
                     </form>
