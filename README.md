@@ -30,6 +30,7 @@ or download the zip file from github.
 After extracting the files,
 
     cd shopify/
+    npm install
     create .env file and set environment variable (Template file .env_sample)
     npm run dev
 
