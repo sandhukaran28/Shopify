@@ -3,6 +3,8 @@
 
 
 <main class="container">
+    <%- include("../partials/flash") %> 
+
 
     <div class="row signup-row">
         <div class="col col-ld-6 mt-4 signup-left" >
@@ -10,7 +12,6 @@
         </div>
         <div class="col-lg-6 mx-auto mt-4 signup-right">
         
-            <%- include("../partials/flash") %> 
             <h1 class="display-6">Create Your Shopify Account</h1>
             <form action="/register" method="POST" class="form">
               

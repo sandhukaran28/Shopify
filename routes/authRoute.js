@@ -57,6 +57,8 @@ router.post('/register', async (req, res) => {
         res.redirect('/products');
     } catch (e) {
         console.log(e);
+        req.flash('error', e.message);
+        res.redirect('/signup');
     }
 
 })
