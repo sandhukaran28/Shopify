@@ -35,7 +35,7 @@ After extracting the files,
     npm run dev
 
 ## Collaborate
-To collaborate, reach us on [sandhukaran2821@gmail.com]()
+To collaborate, reach me on [sandhukaran2821@gmail.com]()
 
     
 
