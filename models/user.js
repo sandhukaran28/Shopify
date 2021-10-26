@@ -15,6 +15,7 @@ const userSchema = new mongoose.Schema({
         required: true,
     },
     cart: [{
+        _id: false,
         product: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Product'
@@ -23,6 +24,18 @@ const userSchema = new mongoose.Schema({
             type: Number,
             min: 0
         }
+    }],
+    orders: [{
+        products: [{
+            product: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Product'
+            },
+            qty: {
+                type: Number,
+                min: 0
+            }
+        }]
     }]
 });
 

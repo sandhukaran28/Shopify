@@ -1,7 +1,7 @@
 <%- include("../partials/header") %> 
 <%- include("../partials/navbar") %> 
 
-<main class="container">
+<main class="container flashMargin">
 
    <%- include("../partials/flash") %> 
    
@@ -68,8 +68,8 @@
             </ul>
 
             <div class="my-3">
-                <form action="#">
-                    <button class="btn btn-success btn-small">Proceed To Pay</button>
+                <form action="/placeOrder" method="post">
+                    <button class="btn btn-success btn-small">Place Order</button>
                 </form>
             </div>
           </div>
