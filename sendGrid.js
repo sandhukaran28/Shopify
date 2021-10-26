@@ -6,24 +6,28 @@ sgMail.setApiKey(API_KEY)
 function sendEmail(email, template, text) {
 
 
-    const message = {
+    try {
+        const message = {
 
-        to: email,
-        from: {
-            name: 'Shopify',
-            email: 'karan0451.cse19@chitkara.edu.in'
-        },
-        subject: 'Order Placed',
-        text: text,
-        html: template
+            to: email,
+            from: {
+                name: 'Shopify',
+                email: 'karan0451.cse19@chitkara.edu.in'
+            },
+            subject: 'Order Placed',
+            text: text,
+            html: template
 
+        }
+
+
+        sgMail.send(message)
+            .then(res => console.log('Email Sent'))
+            .catch((err) => console.log(err));
+
+    } catch (e) {
+        console.log(e);
     }
-
-
-    sgMail.send(message)
-        .then(res => console.log('Email Sent'))
-        .catch((err) => console.log(err));
-
 
 
 }
