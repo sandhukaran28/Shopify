@@ -64,7 +64,7 @@ app.get('/', (req, res) => {
 
 
 // Connecting to database
-mongoose.connect('mongodb://localhost:27017/shopify-db')
+mongoose.connect(process.env.MONGO_URL)
     .then(() => {
         console.log('Connected to database shopify-db');
         // seedDB();
