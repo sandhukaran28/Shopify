@@ -16,6 +16,7 @@ const LocalStratergy = require('passport-local');
 const User = require('./models/user');
 const authRouter = require('./routes/authRoute');
 const cartRouter = require('./routes/cartRoutes');
+const orderRouter = require('./routes/orderRoute');
 
 app.use(express.urlencoded({
     extended: true
@@ -52,6 +53,7 @@ app.use((req, res, next) => {
 app.use(productRouter);
 app.use(authRouter);
 app.use(cartRouter);
+app.use(orderRouter);
 
 
 
@@ -62,7 +64,7 @@ app.get('/', (req, res) => {
 
 
 // Connecting to database
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect('mongodb://localhost:27017/shopify-db')
     .then(() => {
         console.log('Connected to database shopify-db');
         // seedDB();

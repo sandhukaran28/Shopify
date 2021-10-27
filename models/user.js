@@ -26,17 +26,16 @@ const userSchema = new mongoose.Schema({
         }
     }],
     orders: [{
-        products: [{
-            product: {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'Product'
-            },
-            qty: {
-                type: Number,
-                min: 0
-            }
-        }]
-    }]
+        _id: false,
+        product: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Product'
+        },
+        qty: {
+            type: Number,
+            min: 0
+        }
+    }],
 });
 
 userSchema.plugin(passportLocalMongoose);
