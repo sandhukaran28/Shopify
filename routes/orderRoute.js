@@ -95,7 +95,8 @@ router.post('/placeorder', async (req, res) => {
 
     await User.findByIdAndUpdate(userid, {
         $push: {
-            "orders": currentUser.cart
+            "orders": currentUser.cart,
+
         }
     });
 

@@ -34,8 +34,11 @@ const userSchema = new mongoose.Schema({
         qty: {
             type: Number,
             min: 0
+        },
+        time: {
+            type: Date,
         }
-    }],
+    }, ],
 });
 
 userSchema.plugin(passportLocalMongoose);
