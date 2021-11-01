@@ -21,6 +21,7 @@ padding: 20px;
 }
 .navbar {
   background-color: var(--main-color) !important;
+
 }
 .cartIconDiv{
   width: fit-content;
@@ -44,7 +45,7 @@ main {
 
 .carouselDiv{
   width: 100% !important;
-  margin-top: 100px !important;
+  margin-top: 10px !important;
 }
 
 .reviewCard{
@@ -139,9 +140,9 @@ footer li{
   main{
     margin: 0 !important;
   }
-  .carouselDiv{
-    margin-top: 60px !important;
-  }
+  /* .carouselDiv{
+    margin-top: 50px !important;
+  } */
 }
 .card-title{
   transition: 200ms;
@@ -165,9 +166,7 @@ footer li{
 
 /* Cart */
 
-.flashMargin{
-  margin-top: 100px !important;
-}
+
 
 .Lcart{
   background-color: white;
@@ -257,12 +256,14 @@ margin: 0px auto;
     margin-top:100px;
   }
   
+  
 }
 
 @media screen and (max-width:430px) {
 
-   .alert{
-    margin-top:200px;
+   
+  main{
+    margin-top: 130px !important;
   }
   
 }
