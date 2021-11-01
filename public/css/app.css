@@ -258,3 +258,18 @@ margin: 0px auto;
   }
   
 }
+
+
+.orders-icon{
+  transform: scale(1.5);
+}
+
+.nav-item{
+  transition: 400ms;
+  margin: 0px 8px;
+}
+.nav-item:hover{
+  transform: scale(1.2);
+  background-color: var(--secondary-color) !important;
+  border-radius: 5px;
+}
