@@ -179,6 +179,31 @@ router.post('/products/:id/review', isLoggedIn, async (req, res) => {
 })
 
 
+// Searching Element 
+router.get('/search', async (req, res) => {
+
+    try {
+        const {
+            name: pName
+        } = req.query;
+        console.log(pName);
+        const products = await Product.find({
+            name: {
+                $regex: new RegExp(pName, "i")
+            }
+        });
+        console.log(products);
+        res.render('products/search', {
+            products
+        });
+    } catch (e) {
+        console.log(e);
+        req.flash('error', 'oops,something went wrong');
+        res.redirect('/products');
+    }
+})
+
+// Deleting review
 router.delete('/products/review/delete', async (req, res) => {
     try {
         const {
