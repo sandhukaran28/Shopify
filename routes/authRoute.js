@@ -20,7 +20,7 @@ router.post('/login', passport.authenticate('local', {
     const {
         username
     } = req.body;
-    req.flash('success', `Welcome Back ${username} Again!!`);
+    req.flash('success', `Welcome Back ${username} !!`);
     res.redirect('/products');
 
 })
